@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        int arr[] = { 17, 11, 13,56, 5, 6, 7,88,2 };
+        int[] arr = { 17, 11, 13,56, 5, 6, 7,88,2 };
 
         System.out.println("Given Array");
         printArray(arr);
