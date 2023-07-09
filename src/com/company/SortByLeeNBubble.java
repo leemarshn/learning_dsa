@@ -1,17 +1,32 @@
 package com.company;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Arrays;
+import java.util.Random;
 
 public class SortByLeeNBubble {
 
 
     public static void main(String[] args) {
-        int[] array;
-        array = new int[]{3,60,35,2,45,320,5};
+        Random rand = new Random();
+        int[] array = new int[100];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = rand.nextInt(100);
+        }
+        Instant start = Instant.now();
+
         bubbleSort(array);
         for (int arr:array) {
             System.out.println(arr);
         }
+        Instant end = Instant.now();
+        Duration timeElapsed = Duration.between(start, end);
+        long seconds = timeElapsed.toSeconds();
+
+        System.out.println(seconds);
+
     }
 
     static void bubbleSort(int[] array){
