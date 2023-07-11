@@ -2,10 +2,9 @@ package com.company;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.Arrays;
 import java.util.Random;
 
-public class SortByLeeNBubble {
+public class ImprovedBubbleSort {
 
 
     public static void main(String[] args) {
@@ -17,7 +16,7 @@ public class SortByLeeNBubble {
         }
         Instant start = Instant.now();
 
-        bubbleSort(array);
+        bubbleSort(array, array.length);
         for (int arr:array) {
             System.out.println(arr);
         }
@@ -29,16 +28,21 @@ public class SortByLeeNBubble {
 
     }
 
-    static void bubbleSort(int[] array){
-        for (int i=0; i<array.length; i++){
-            for (int j =1+i; j<array.length; j++){
-                int temp;
-                if (array[j]<array[i]){
-                    temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
+
+   static void bubbleSort(int[] array, int n){
+        int pass, i,temp,  swapped =1;
+        for (pass=n-1; pass >=0 && swapped==1; pass--){
+            swapped = 0;
+
+            for (i=0; i<=pass -1; i++){
+                if(array[i]> array[i+1]){
+                    temp =array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = temp;
+                    swapped = 1;
                 }
             }
+
         }
     }
 }
